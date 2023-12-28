@@ -23,8 +23,8 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
-  serverURL: 'http://localhost:3000',
-  cors: ['http://localhost:3001'],
+  serverURL: 'https://explore-norway-cms-production.up.railway.app',
+  cors: ['*'],
   plugins: [payloadCloud()],
   db: mongooseAdapter({
     url: process.env.DATABASE_URI,
