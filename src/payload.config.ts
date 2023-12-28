@@ -7,6 +7,7 @@ import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
 
 import Users from './collections/Users'
+import Header from './globals/Header'
 
 export default buildConfig({
   admin: {
@@ -18,6 +19,7 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
+  globals: [Header],
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
