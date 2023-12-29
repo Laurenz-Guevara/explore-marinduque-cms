@@ -6,20 +6,27 @@ import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
 
+// Collections
 import Users from './collections/Users'
+import { Pages } from './collections/Pages'
+// Globals
 import Header from './globals/Header'
+import Hero from './globals/Hero'
 
 export default buildConfig({
   admin: {
     user: Users.slug,
+    meta: {
+      titleSuffix: '- Lagalag'
+    },
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users],
+  collections: [Users, Pages],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
-  globals: [Header],
+  globals: [Header, Hero],
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
