@@ -8,7 +8,9 @@ import { buildConfig } from 'payload/config'
 
 // Collections
 import Users from './collections/Users'
+import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
+
 // Globals
 import Header from './globals/Header'
 import Hero from './globals/Hero'
@@ -22,7 +24,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, Pages],
+  collections: [Users, Pages, Media],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
