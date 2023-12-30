@@ -1,6 +1,6 @@
 import type { Block } from 'payload/types'
 
-export const MediaBlock: Block = {
+export const ImageListBlock: Block = {
   fields: [
     {
       name: 'position',
@@ -61,6 +61,6 @@ export const MediaBlock: Block = {
       required: true,
     },
   ],
-  slug: 'mediaBlock',
+  slug: 'ImageListBlock',
 }
 

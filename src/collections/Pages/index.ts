@@ -2,7 +2,7 @@ import type { CollectionConfig } from 'payload/types'
 
 import { HeroBlock } from '../blocks/HeroBlock'
 import { HeadingBlock } from '../blocks/HeadingBlock'
-import { MediaBlock } from '../blocks/MediaBlock'
+import { ImageListBlock } from '../blocks/ImageListBlock'
 
 import { slugField } from '../../fields/slug'
 
@@ -48,7 +48,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [HeroBlock, HeadingBlock, MediaBlock],
+              blocks: [HeroBlock, HeadingBlock, ImageListBlock],
             },
           ],
         },
