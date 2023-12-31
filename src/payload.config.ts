@@ -10,6 +10,7 @@ import { buildConfig } from 'payload/config'
 import Users from './collections/Users'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
+import { Accommodation } from './collections/Accomodation'
 
 // Globals
 import Header from './globals/Header'
@@ -24,7 +25,7 @@ export default buildConfig({
     bundler: webpackBundler(),
   },
   editor: slateEditor({}),
-  collections: [Users, Pages, Media],
+  collections: [Users, Pages, Media, Accommodation],
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
@@ -35,6 +36,9 @@ export default buildConfig({
   cors: '*',
   plugins: [payloadCloud()],
   db: mongooseAdapter({
+    connectOptions: {
+      dbName: process.env.ENVIRONMENT,
+    },
     url: process.env.DATABASE_URI,
   }),
 })
