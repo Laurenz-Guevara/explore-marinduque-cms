@@ -5,6 +5,8 @@ import { mongooseAdapter } from '@payloadcms/db-mongodb'
 import { webpackBundler } from '@payloadcms/bundler-webpack'
 import { slateEditor } from '@payloadcms/richtext-slate'
 import { buildConfig } from 'payload/config'
+import { s3Adapter } from '@payloadcms/plugin-cloud-storage/s3'
+import { cloudStorage } from '@payloadcms/plugin-cloud-storage';
 
 // Collections
 import Users from './collections/Users'
@@ -15,6 +17,17 @@ import { Accommodation } from './collections/Accomodation'
 // Globals
 import Header from './globals/Header'
 import Hero from './globals/Hero'
+
+const adapter = s3Adapter({
+  config: {
+    credentials: {
+      accessKeyId: process.env.S3_ACCESS_KEY_ID,
+      secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+    },
+    region: process.env.S3_REGION,
+  },
+  bucket: process.env.S3_BUCKET,
+})
 
 export default buildConfig({
   admin: {
@@ -34,7 +47,16 @@ export default buildConfig({
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
   cors: '*',
-  plugins: [payloadCloud()],
+  plugins: [
+    payloadCloud(),
+    cloudStorage({
+      collections: {
+        media: {
+          adapter: adapter,
+        },
+      },
+    }),
+  ],
   db: mongooseAdapter({
     connectOptions: {
       dbName: process.env.ENVIRONMENT,
