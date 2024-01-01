@@ -14,6 +14,12 @@ export const Accommodation: CollectionConfig = {
   },
   fields: [
     {
+      name: 'media',
+      relationTo: 'media',
+      required: true,
+      type: 'upload',
+    },
+    {
       name: 'name',
       type: 'text',
       label: "Name",
@@ -35,6 +41,12 @@ export const Accommodation: CollectionConfig = {
       admin: {
         step: 0.1,
       }
+    },
+    {
+      name: 'price',
+      type: 'number',
+      label: "Price",
+      required: true,
     }
   ],
 }
