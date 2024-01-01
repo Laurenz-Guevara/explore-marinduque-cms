@@ -4,12 +4,12 @@ export const ThreeCardBlock: Block = {
   fields: [
     {
       name: 'cardType',
-      label: 'Cards',
+      label: 'Get content from',
       defaultValue: 'accomodation',
       required: true,
       options: [
         {
-          label: 'Accommodation Block',
+          label: 'Accommodation',
           value: 'accomodation',
         },
       ],
