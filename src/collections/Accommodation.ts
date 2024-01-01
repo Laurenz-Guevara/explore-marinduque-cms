@@ -2,6 +2,9 @@ import type { CollectionConfig } from 'payload/types'
 
 export const Accommodation: CollectionConfig = {
   slug: 'accommodation',
+  labels: {
+    plural: 'Accommodation'
+  },
   access: {
     read: () => true,
   },

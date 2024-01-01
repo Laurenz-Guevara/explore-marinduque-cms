@@ -4,6 +4,7 @@ import { HeroBlock } from '../blocks/HeroBlock'
 import { HeadingBlock } from '../blocks/HeadingBlock'
 import { ImageListBlock } from '../blocks/ImageListBlock'
 import { CarouselBlock } from '../blocks/CarouselBlock'
+import { ThreeCardBlock } from '../blocks/ThreeCardBlock'
 
 import { slugField } from '../../fields/slug'
 
@@ -49,7 +50,7 @@ export const Pages: CollectionConfig = {
               name: 'layout',
               type: 'blocks',
               required: true,
-              blocks: [HeroBlock, HeadingBlock, ImageListBlock, CarouselBlock],
+              blocks: [HeroBlock, HeadingBlock, ImageListBlock, CarouselBlock, ThreeCardBlock],
             },
           ],
         },

@@ -12,7 +12,7 @@ import { cloudStorage } from '@payloadcms/plugin-cloud-storage';
 import Users from './collections/Users'
 import { Media } from './collections/Media'
 import { Pages } from './collections/Pages'
-import { Accommodation } from './collections/Accomodation'
+import { Accommodation } from './collections/Accommodation'
 
 // Globals
 import Header from './globals/Header'
