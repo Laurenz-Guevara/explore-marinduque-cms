@@ -32,6 +32,20 @@ export const Accommodation: CollectionConfig = {
       required: true,
     },
     {
+      name: 'locationValue',
+      type: 'text',
+      admin: {
+        hidden: true,
+      },
+      hooks: {
+        afterRead: [
+          ({ data }) => {
+            return data.location.toLowerCase();
+          },
+        ],
+      },
+    },
+    {
       name: 'rating',
       type: 'number',
       label: "Star Rating",
