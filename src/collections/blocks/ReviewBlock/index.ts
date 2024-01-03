@@ -11,6 +11,13 @@ export const ReviewBlock: Block = {
 
   fields: [
     {
+      name: 'backgroundImage',
+      label: 'Background Image',
+      relationTo: 'media',
+      required: true,
+      type: 'upload',
+    },
+    {
       name: 'reviewItems',
       labels: {
         singular: 'Review',
@@ -20,6 +27,12 @@ export const ReviewBlock: Block = {
       minRows: 3,
       maxRows: 3,
       fields: [
+        {
+          name: 'picture',
+          relationTo: 'media',
+          required: true,
+          type: 'upload',
+        },
         {
           name: 'name',
           type: 'text',

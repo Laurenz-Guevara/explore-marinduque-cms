@@ -32,7 +32,6 @@ export const CarouselBlock: Block = {
       fields: carouselField,
       type: 'array',
       minRows: 4,
-      // maxRows: 4,
     },
   ],
   slug: 'Carousel',

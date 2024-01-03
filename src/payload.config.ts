@@ -16,7 +16,6 @@ import { Accommodation } from './collections/Accommodation'
 
 // Globals
 import Header from './globals/Header'
-import Hero from './globals/Hero'
 
 const adapter = s3Adapter({
   config: {
