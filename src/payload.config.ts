@@ -46,7 +46,7 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
-  cors: [process.env.FRONTEND_URL],
+  cors: ["https://explore-marinduque.refoldstudio.com"],
   plugins: [
     payloadCloud(),
     cloudStorage({
