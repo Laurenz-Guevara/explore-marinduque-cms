@@ -16,6 +16,7 @@ import { Accommodation } from './collections/Accommodation'
 
 // Globals
 import Header from './globals/Header'
+import Footer from './globals/Footer'
 
 const adapter = s3Adapter({
   config: {
@@ -41,11 +42,11 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(__dirname, 'payload-types.ts'),
   },
-  globals: [Header],
+  globals: [Header, Footer],
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
-  cors: '*',
+  cors: ['http://localhost:3001'],
   plugins: [
     payloadCloud(),
     cloudStorage({
