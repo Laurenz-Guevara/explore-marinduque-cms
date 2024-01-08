@@ -46,7 +46,7 @@ export default buildConfig({
   graphQL: {
     schemaOutputFile: path.resolve(__dirname, 'generated-schema.graphql'),
   },
-  cors: ['http://localhost:3001'],
+  cors: [process.env.FRONTEND_URL],
   plugins: [
     payloadCloud(),
     cloudStorage({
